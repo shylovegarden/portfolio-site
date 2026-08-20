@@ -1,52 +1,50 @@
-# Jonah Eastin - Senior Diagnostic Engineer Portfolio
+# Jonah Eastin — Portfolio Site
 
-This is a modern, high-velocity Next.js and Tailwind CSS portfolio built to showcase live production apps (like SHY) and AI-augmented capabilities.
+Modern Next.js portfolio showcasing production applications, case studies, and resume.
 
-## Features
-- **Next.js App Router**: Optimized, fast static site generation
-- **Tailwind CSS v4**: Beautiful, minimalist styling with deep dark palettes (`bg-slate-950`) and electric blue accents
-- **Responsive Layout**: Designed for all screen sizes (mobile and desktop)
-- **Componentized Structure**: Easy to add more projects and update the resume link
+**Live URL (after deploy):** [jonaheastin.com](https://jonaheastin.com)
 
-## Quickstart (Local Development)
+## What's included
+
+- Homepage with projects, expertise, and case studies
+- Printable resume at `/resume`
+- Editable content in `src/content/portfolio.ts`
+- Markdown resume backup in `RESUME.md`
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deployment Instructions (Vercel)
+Open [http://localhost:3000](http://localhost:3000).
 
-Deploying to Vercel is free and takes under a minute.
+## Deploy to Vercel (correct project)
 
-### Step 1: Push to GitHub
+> **Important:** Do not deploy to an existing Vercel project tied to another site. Create a **new** project from this repo.
 
-If you haven't already, push this code to a new GitHub repository:
+1. Push this repo to GitHub (`shylovegarden/portfolio-site`).
+2. Go to [vercel.com/new](https://vercel.com/new) and import **portfolio-site**.
+3. Deploy — Vercel auto-detects Next.js.
+4. Add custom domain **jonaheastin.com** in Vercel → Project → Settings → Domains.
+5. Update DNS at your registrar to point to Vercel (A/CNAME records shown in dashboard).
 
-```bash
-# Initialize git and add files
-git init
-git add .
-git commit -m "Deploy senior diagnostic portfolio site"
+## After deploy — checklist
 
-# If using GitHub CLI:
-gh repo create portfolio-site --public --source=. --push
+- [ ] Confirm `jonaheastin.com` loads your site (not another portfolio)
+- [ ] Update LinkedIn URL in `src/content/portfolio.ts` if needed
+- [ ] Add real metrics to case studies (users, latency, etc.)
+- [ ] Deploy DealerHunt PRO demo to Vercel and add live URL
+- [ ] Pin SHY and best repos on GitHub with README screenshots
+- [ ] Print resume PDF from `/resume` for applications
 
-# If NOT using GitHub CLI, create an empty repo on github.com manually and run:
-# git remote add origin https://github.com/YOUR_USERNAME/portfolio-site.git
-# git branch -M main
-# git push -u origin main
-```
+## Content updates
 
-### Step 2: Deploy to Vercel
+Edit `src/content/portfolio.ts` for:
 
-1. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
-2. Click **Add New Project**.
-3. Select your `portfolio-site` repository.
-4. Vercel will auto-detect Next.js. Click **Deploy**.
-5. Within 60 seconds, your portfolio will be live at a URL like `portfolio-site-xyz.vercel.app`.
+- Projects, case studies, stats, resume bullets
+- Contact info and social links
+- Hero headline and expertise copy
 
-### Next Steps (Outreach)
-
-Once live, copy your Vercel URL and send it to recruiters in the St. Louis area using the provided outreach template.
+Then commit and push — Vercel redeploys automatically.

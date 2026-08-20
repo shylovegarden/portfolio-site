@@ -14,24 +14,45 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://jonaheastin.com";
+
 export const metadata: Metadata = {
-  title: "Jonah Eastin | Senior Diagnostic Engineer & AI-Augmented Architect",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Jonah Eastin | Software Engineer · Full-Stack & Mobile",
+    template: "%s | Jonah Eastin",
+  },
   description:
-    "Senior Diagnostic Engineer & AI-Augmented Software Architect in St. Peters, MO. I architect and ship high-velocity cloud systems using Flutter, Dart, Supabase, and AI-driven workflows. Available in St. Louis metro — 60-mile radius.",
+    "Software engineer in St. Peters, MO. I build and deploy production mobile and web apps with Flutter, TypeScript, Supabase, and Vertex AI. Open to full-time, contract, and hybrid roles.",
   keywords: [
-    "AI-Augmented Engineer St. Louis",
+    "Software Engineer St. Louis",
+    "Flutter Developer Missouri",
     "Full Stack Developer St. Peters",
-    "Senior Diagnostic Engineer Missouri",
-    "Flutter Developer St. Louis",
+    "TypeScript Developer St. Louis",
+    "Supabase Developer",
+    "Mobile App Developer St. Louis",
     "Contract Software Engineer St. Charles",
-    "Supabase Developer St. Louis",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Jonah Eastin | Senior Diagnostic Engineer & AI-Augmented Architect",
+    title: "Jonah Eastin | Software Engineer · Full-Stack & Mobile",
     description:
-      "I architect and ship high-velocity cloud systems using Flutter, Dart, Supabase, and AI-driven workflows. Based in St. Peters, MO.",
+      "Production mobile and web applications — Flutter, TypeScript, Supabase, Vertex AI. Based in St. Peters, MO.",
     type: "website",
-    url: "https://portfolio-site.vercel.app",
+    url: siteUrl,
+    siteName: "Jonah Eastin",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jonah Eastin | Software Engineer",
+    description:
+      "Production mobile and web applications — Flutter, TypeScript, Supabase, Vertex AI.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -1,0 +1,65 @@
+.resume-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+@media print {
+  @page {
+    margin: 0.6in;
+    size: letter;
+  }
+
+  body {
+    background: white !important;
+    color: #0f172a !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-page {
+    background: white !important;
+    color: #0f172a !important;
+  }
+
+  .resume-sheet {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .resume-sheet header,
+  .resume-sheet section {
+    break-inside: avoid;
+  }
+
+  .resume-sheet h1,
+  .resume-sheet h2,
+  .resume-sheet h3,
+  .resume-sheet p,
+  .resume-sheet li,
+  .resume-sheet dd,
+  .resume-sheet dt,
+  .resume-sheet span,
+  .resume-sheet a {
+    color: #0f172a !important;
+  }
+
+  .resume-sheet .text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  .resume-sheet .text-slate-300,
+  .resume-sheet .text-slate-400,
+  .resume-sheet .text-slate-500 {
+    color: #334155 !important;
+  }
+
+  .resume-section-title {
+    color: #475569 !important;
+  }
+}
