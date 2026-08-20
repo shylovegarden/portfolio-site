@@ -30,7 +30,16 @@ export default function ResumePage() {
           <Link href="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">
             ← Back to portfolio
           </Link>
-          <PrintButton />
+          <div className="flex gap-4 items-center">
+            <a 
+              href="/Jonah_Eastin_Resume.pdf" 
+              download
+              className="text-xs font-bold bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 px-3 py-1.5 rounded border border-blue-500/30 transition-colors"
+            >
+              ↓ PDF
+            </a>
+            <PrintButton />
+          </div>
         </div>
       </div>
 
