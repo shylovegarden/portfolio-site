@@ -27,7 +27,7 @@ export const siteConfig = {
   name: 'Jonah Eastin',
   title: 'Software Engineer · Full-Stack & Mobile',
   headline: ['Software Engineer.', 'Systems Thinker.', 'Production Builder.'],
-  email: 'contact@jonaheastin.com',
+  email: 'jonah@shyapps.com',
   siteUrl: 'https://jonaheastin.com',
   githubUrl: 'https://github.com/shylovegarden',
   linkedInUrl: 'https://linkedin.com/in/jonaheastin',
@@ -66,8 +66,8 @@ export const projects: Project[] = [
     role: 'Lead Architect & Founder',
     tagline: 'Intentional connection, built for the real world.',
     description:
-      'A scalable mobile platform leveraging AI to foster intentional connections. Built with Flutter and Supabase, it demonstrates end-to-end architecture from data modeling to real-time cloud deployment.',
-    tech: ['Flutter', 'Dart', 'Supabase', 'Vertex AI', 'Google Cloud', 'Dart FFI'],
+      'The Relationship Operating System (LifeOS). A production-grade mobile platform built with Flutter (BLoC/Provider) and Supabase. Features a complex backend with Postgres RLS, Realtime sync, Stripe monetization, and over 300 Edge Functions.',
+    tech: ['Flutter', 'Supabase (RLS/Edge)', 'Stripe', 'Vertex AI', 'Google Cloud', 'Dart'],
     liveUrl: 'https://shyapps.com',
     liveLabel: 'Visit shyapps.com',
     githubUrl: 'https://github.com/shylovegarden',
@@ -78,10 +78,10 @@ export const projects: Project[] = [
     name: 'DealerHunt PRO',
     flagship: false,
     role: 'Lead Developer',
-    tagline: 'Market intelligence for automotive professionals.',
+    tagline: 'Multi-source vehicle-sourcing intelligence platform.',
     description:
-      'A B2B web application engineered to aggregate and analyze market data in real-time. Showcases robust API integration, modern TypeScript architecture, and a highly responsive user interface.',
-    tech: ['TypeScript', 'Next.js', 'Supabase', 'REST APIs', 'Tailwind CSS'],
+      'Aggregates vehicle auction listings via Playwright/patchright scrapers running on GitHub Actions. Built on Next.js 15 (App Router) and Supabase Realtime, utilizing Gemini AI for automated vehicle valuation and profit scoring.',
+    tech: ['Next.js 15', 'TypeScript', 'Playwright', 'Supabase Realtime', 'Gemini AI'],
     liveUrl: null,
     githubUrl: 'https://github.com/shylovegarden/DealerHunt-PRO',
     icon: '🚙',
@@ -104,10 +104,10 @@ export const projects: Project[] = [
     name: 'Zeus',
     flagship: false,
     role: 'Systems Engineer',
-    tagline: 'High-performance, low-level system design.',
+    tagline: 'High-performance Rust systems engineering.',
     description:
-      'A systems engineering project developed in Rust to explore memory safety and concurrent processing. Demonstrates an ability to operate close to the hardware for performance-critical applications.',
-    tech: ['Rust', 'Systems Architecture', 'Performance Eng.'],
+      'A systems-level project in Rust exploring bare-metal execution, hardware enclaves (SGX/SEV), and kernel bypass. Includes a custom package manager, cloud job queue (Axum+Tokio), and machine attestation simulation.',
+    tech: ['Rust', 'Tokio/Axum', 'Systems Architecture', 'Hardware Enclaves'],
     liveUrl: null,
     githubUrl: 'https://github.com/shylovegarden/Zeus',
     icon: '⚡',
@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Architecture', value: 'Serverless Backend' },
       { label: 'AI Engine', value: 'Vertex AI Integration' },
     ],
-    stack: ['Flutter', 'Dart', 'Supabase', 'Vertex AI', 'Google Cloud'],
+    stack: ['Flutter', 'Supabase', 'Vertex AI', 'Stripe', 'Google Cloud'],
     links: [
       { label: 'Live app', href: 'https://shyapps.com' },
       { label: 'GitHub', href: 'https://github.com/shylovegarden' },
@@ -148,11 +148,11 @@ export const caseStudies: CaseStudy[] = [
     project: 'DealerHunt PRO',
     role: 'Lead Developer',
     problem:
-      'Automotive dealers and buyers lack a fast way to cut through market noise and identify real opportunities in real time.',
+      'Automotive dealers and buyers lack a fast way to cut through market noise across fragmented auction sites and marketplaces.',
     approach: [
-      'Built a TypeScript / Next.js frontend with a clean, data-dense UX for scanning deals.',
-      'Designed Supabase-backed data models and REST API integrations for market intelligence.',
-      'Structured the codebase for incremental feature delivery and future scaling.',
+      'Engineered a scalable scraping engine using Playwright and FlareSolverr on GitHub Actions to bypass anti-bot protections.',
+      'Built a Next.js 15 frontend to surface normalized deal data via Supabase Realtime.',
+      'Integrated Gemini AI to automatically score vehicles for profit potential and generate instant teardown estimates.',
     ],
     outcomes: [
       'Professional-grade B2B-style web application architecture.',
@@ -165,7 +165,7 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Data', value: 'Real-time Sync' },
       { label: 'Frontend', value: 'Next.js App Router' },
     ],
-    stack: ['TypeScript', 'Next.js', 'Supabase', 'Tailwind CSS'],
+    stack: ['Next.js 15', 'Playwright', 'Supabase Realtime', 'Gemini AI'],
     links: [{ label: 'GitHub', href: 'https://github.com/shylovegarden/DealerHunt-PRO' }],
   },
   {
@@ -196,11 +196,11 @@ export const caseStudies: CaseStudy[] = [
     project: 'Zeus',
     role: 'Systems Engineer',
     problem:
-      'Performance and reliability issues often sit below the application layer — requiring systems-level thinking, not just framework knowledge.',
+      'Architected a high-performance systems platform exploring kernel bypass, hardware enclaves, and bare-metal execution.',
     approach: [
-      'Implemented core logic in Rust for memory safety and predictable performance.',
-      'Applied diagnostic-first engineering: measure, isolate, fix, verify.',
-      'Documented architecture decisions for maintainability and interview conversations.',
+      'Implemented core execution logic in Rust for strict memory safety and predictable latency.',
+      'Built an accompanying cloud service using Axum and Tokio for remote job orchestration.',
+      'Designed a machine attestation simulator and researched hardware-level security primitives.',
     ],
     outcomes: [
       'Shows depth beyond typical web-only portfolios.',
