@@ -145,13 +145,15 @@ export default function Home() {
             <h1
               id="hero-heading"
               className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8"
-              style={{ animation: 'fade-up 0.7s 0.1s ease both' }}
             >
               {siteConfig.headline.map((line, i) => (
                 <span
                   key={line}
                   className={`block ${i === 1 ? 'gradient-text glow-text' : ''}`}
-                  style={i !== 1 ? { color: 'var(--text-primary)' } : undefined}
+                  style={{
+                    ...(i !== 1 ? { color: 'var(--text-primary)' } : {}),
+                    animation: `fade-up 0.7s ${0.1 + (i * 0.15)}s ease both`
+                  }}
                 >
                   {line}
                 </span>
@@ -393,7 +395,7 @@ export default function Home() {
                             src="/shy-preview.png"
                             alt="SHY app live preview — click to visit shyapps.com"
                             className="relative z-10 w-[72%] max-w-[280px] object-contain transition-transform duration-500 group-hover:scale-105"
-                            style={{ marginBottom: '-2px' }}
+                            style={{ marginBottom: '-2px', animation: 'float-subtle 6s ease-in-out infinite' }}
                           />
                         ) : (
                           <div className="relative z-10 flex flex-col items-center gap-4 pb-10">
@@ -595,7 +597,9 @@ export default function Home() {
                       </h4>
                       <div className="flex flex-col md:flex-row gap-4 relative">
                         {/* Connecting line for desktop */}
-                        <div className="hidden md:block absolute top-6 left-0 right-0 h-px" style={{ background: 'var(--border)', zIndex: 0 }} />
+                        <div className="hidden md:block absolute top-6 left-0 right-0 h-px overflow-hidden" style={{ background: 'var(--border)', zIndex: 0 }}>
+                          <div className="w-full h-full" style={{ background: 'linear-gradient(90deg, transparent, var(--accent-bright), transparent)', animation: 'pipeline-flow 3s linear infinite' }} />
+                        </div>
                         
                         {study.approach.map((step, stepIndex) => (
                           <div key={step} className="flex-1 relative z-10 flex flex-row md:flex-col items-start gap-4 group">
@@ -613,7 +617,9 @@ export default function Home() {
                               </div>
                               {/* Mobile connecting line */}
                               {stepIndex !== study.approach.length - 1 && (
-                                <div className="md:hidden absolute top-12 bottom-[-16px] left-1/2 w-px -translate-x-1/2" style={{ background: 'var(--border)' }} />
+                                <div className="md:hidden absolute top-12 bottom-[-16px] left-1/2 w-px -translate-x-1/2 overflow-hidden" style={{ background: 'var(--border)' }}>
+                                  <div className="w-full h-full" style={{ background: 'linear-gradient(180deg, transparent, var(--accent-bright), transparent)', animation: 'pipeline-flow-vertical 3s linear infinite' }} />
+                                </div>
                               )}
                             </div>
                             
