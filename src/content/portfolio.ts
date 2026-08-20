@@ -133,10 +133,10 @@ export const caseStudies: CaseStudy[] = [
       'Cross-platform mobile stack with cloud AI integration.',
     ],
     metrics: [
-      { label: 'Status', value: 'Live production' },
+      { label: 'Status', value: 'Live in Production' },
       { label: 'Platform', value: 'iOS & Android' },
-      { label: 'Stack depth', value: 'Mobile + backend + AI' },
-      { label: 'Your metric', value: 'Add users / retention here' },
+      { label: 'Architecture', value: 'Serverless Backend' },
+      { label: 'AI Engine', value: 'Vertex AI Integration' },
     ],
     stack: ['Flutter', 'Dart', 'Supabase', 'Vertex AI', 'Google Cloud'],
     links: [
@@ -160,13 +160,37 @@ export const caseStudies: CaseStudy[] = [
       'Clear path to demo deployment on Vercel.',
     ],
     metrics: [
-      { label: 'Status', value: 'GitHub — deploy demo next' },
-      { label: 'Domain', value: 'Automotive / B2B SaaS' },
-      { label: 'Your metric', value: 'Add deals indexed / API latency' },
-      { label: 'Your metric', value: 'Add demo URL when live' },
+      { label: 'Status', value: 'Functional Architecture' },
+      { label: 'Domain', value: 'B2B Automotive' },
+      { label: 'Data', value: 'Real-time Sync' },
+      { label: 'Frontend', value: 'Next.js App Router' },
     ],
     stack: ['TypeScript', 'Next.js', 'Supabase', 'Tailwind CSS'],
     links: [{ label: 'GitHub', href: 'https://github.com/shylovegarden/DealerHunt-PRO' }],
+  },
+  {
+    project: 'Stay Life',
+    role: 'Architect & Builder',
+    problem:
+      'Digital productivity tools often create more friction than they solve, overwhelming users with complex features rather than focusing on execution.',
+    approach: [
+      'Engineered a minimalist interface focusing entirely on core productivity workflows.',
+      'Implemented robust client-side state management for instantaneous UI response.',
+      'Integrated Supabase for secure, real-time data synchronization across devices.',
+    ],
+    outcomes: [
+      'Delivered a highly performant, distraction-free application.',
+      'Demonstrated ability to build clean, maintainable frontend architectures.',
+      'Showcased expertise in modern web stack fundamentals.',
+    ],
+    metrics: [
+      { label: 'Status', value: 'Functional Repo' },
+      { label: 'Focus', value: 'UI/UX & Performance' },
+      { label: 'Backend', value: 'Supabase Data' },
+      { label: 'Frontend', value: 'Vanilla JS/HTML/CSS' },
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Supabase'],
+    links: [{ label: 'GitHub', href: 'https://github.com/shylovegarden/Life' }],
   },
   {
     project: 'Zeus',
@@ -185,9 +209,9 @@ export const caseStudies: CaseStudy[] = [
     ],
     metrics: [
       { label: 'Language', value: 'Rust' },
-      { label: 'Focus', value: 'Systems & performance' },
-      { label: 'Your metric', value: 'Add benchmark results' },
-      { label: 'Your metric', value: 'Add throughput / latency numbers' },
+      { label: 'Focus', value: 'Systems & Performance' },
+      { label: 'Design', value: 'Memory Safe' },
+      { label: 'Execution', value: 'Low-level compute' },
     ],
     stack: ['Rust', 'Systems Architecture'],
     links: [{ label: 'GitHub', href: 'https://github.com/shylovegarden/Zeus' }],
@@ -213,7 +237,7 @@ export const resumeExperience = [
     location: 'Remote',
     bullets: [
       'Built DealerHunt PRO — TypeScript/Next.js dealer intelligence platform with Supabase and REST API integrations.',
-      'Built Life — minimalist productivity web app with Supabase backend.',
+      'Built Stay Life — minimalist productivity web app with Supabase backend.',
       'Built Zeus — Rust systems project focused on performance and diagnostic engineering.',
     ],
   },

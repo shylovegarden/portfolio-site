@@ -225,7 +225,7 @@ export default function Home() {
                 Production Work
               </h2>
               <p className="text-lg max-w-xl" style={{ color: 'var(--text-secondary)' }}>
-                Applications I designed, built, and deployed. One live product today — more demos coming online soon.
+                Live products and functional architectures designed for scale, performance, and immediate business impact.
               </p>
             </div>
 
@@ -429,8 +429,7 @@ export default function Home() {
                 Problem → Approach → Outcome
               </h2>
               <p className="text-lg max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
-                The details hiring managers look for. Replace placeholder metrics with your real numbers as they become
-                available.
+                Deep dives into system design, architecture decisions, and the technical challenges solved in each project.
               </p>
             </div>
 
