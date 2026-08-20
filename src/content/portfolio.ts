@@ -66,7 +66,7 @@ export const projects: Project[] = [
     role: 'Lead Architect & Founder',
     tagline: 'Intentional connection, built for the real world.',
     description:
-      'The Relationship Operating System (LifeOS). A production-grade mobile platform built with Flutter (BLoC/Provider) and Supabase. Features a complex backend with Postgres RLS, Realtime sync, Stripe monetization, and over 300 Edge Functions.',
+      'The Relationship Operating System (LifeOS). A production-grade mobile platform built with Flutter (BLoC/Provider) and Supabase. Features a complex backend with Postgres RLS, Realtime sync, Stripe monetization, and over 300 Edge Functions. Backed by the NVIDIA Inception Program.',
     tech: ['Flutter', 'Supabase (RLS/Edge)', 'Stripe', 'Vertex AI', 'Google Cloud', 'Dart'],
     liveUrl: 'https://shyapps.com',
     liveLabel: 'Visit shyapps.com',
@@ -227,7 +227,7 @@ export const resumeExperience = [
     bullets: [
       'Architected and shipped a production Flutter mobile app with Supabase backend and Vertex AI integration.',
       'Own full product lifecycle: system design, mobile development, cloud deployment, and iteration based on user feedback.',
-      'Live product at shyapps.com — mobile (iOS/Android), backend services, and AI-assisted features.',
+      'Live product at shyapps.com — mobile (iOS/Android), backend services, and AI-assisted features (NVIDIA Inception Program Member).',
     ],
   },
   {

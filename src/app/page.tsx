@@ -337,9 +337,21 @@ export default function Home() {
                           </div>
                           <div className="text-3xl font-black tracking-widest gradient-text">{p.name}</div>
                           {p.liveUrl && (
-                            <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-                              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                              Live on {new URL(p.liveUrl).hostname}
+                            <div className="flex flex-col items-center gap-6 mt-2">
+                              <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                                Live on {new URL(p.liveUrl).hostname}
+                              </div>
+                              {p.name === 'SHY' && (
+                                <div className="mt-2" style={{ filter: 'drop-shadow(0 0 20px rgba(118, 185, 0, 0.2))' }}>
+                                  <img 
+                                    src="/nvidia-inception.png" 
+                                    alt="NVIDIA Inception Program Member" 
+                                    className="h-10 object-contain hover:scale-105 transition-transform cursor-help"
+                                    title="Backed by the NVIDIA Inception Program"
+                                  />
+                                </div>
+                              )}
                             </div>
                           )}
                         </div>
