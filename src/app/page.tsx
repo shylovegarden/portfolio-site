@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import {
   caseStudies,
   expertise,
@@ -44,11 +45,11 @@ export default function Home() {
   }, []);
 
   const navLinks = [
-    { href: '#expertise', label: 'Expertise' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#case-studies', label: 'Case Studies' },
+    { href: '/#expertise', label: 'Expertise' },
+    { href: '/#projects', label: 'Projects' },
+    { href: '/#case-studies', label: 'Case Studies' },
     { href: '/resume', label: 'Resume' },
-    { href: '#coverage', label: 'Coverage' },
+    { href: '/#coverage', label: 'Coverage' },
   ];
 
   return (
@@ -73,7 +74,7 @@ export default function Home() {
 
             <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   className="animated-underline text-sm font-medium transition-colors duration-200"
@@ -82,20 +83,20 @@ export default function Home() {
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
             <div className="flex items-center gap-3">
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="btn-glow inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl"
               >
                 Get in Touch
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </a>
+              </Link>
               {/* Mobile menu button */}
               <button
                 className="lg:hidden p-2 rounded-lg glass border"
@@ -115,17 +116,16 @@ export default function Home() {
 
           {/* Mobile nav dropdown */}
           {mobileNavOpen && (
-            <nav className="lg:hidden px-6 pb-4 flex flex-col gap-4 border-t" style={{ borderColor: 'var(--border)' }} aria-label="Mobile navigation">
+            <nav className="lg:hidden px-6 py-4 flex flex-col gap-4 border-t" style={{ borderColor: 'var(--border)' }} aria-label="Mobile navigation">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium py-2"
-                  style={{ color: 'var(--text-secondary)' }}
+                  className="text-2xl font-bold tracking-tight"
                   onClick={() => setMobileNavOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           )}
@@ -168,22 +168,22 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4" style={{ animation: 'fade-up 0.7s 0.3s ease both' }}>
-              <a
-                href="#case-studies"
+              <Link
+                href="/#case-studies"
                 className="btn-glow inline-flex items-center gap-2.5 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-[15px] transition-all"
               >
                 Read Case Studies
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/resume"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 glass border font-semibold rounded-xl text-[15px] transition-all hover:border-blue-500/30"
                 style={{ borderColor: 'var(--border)', color: 'var(--text-primary)' }}
               >
                 View Resume
-              </a>
+              </Link>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 glass border font-semibold rounded-xl text-[15px] transition-all hover:border-blue-500/30"
@@ -435,62 +435,81 @@ export default function Home() {
                   .map((p, i) => (
                     <div
                       key={p.name}
-                      className={`reveal reveal-delay-${i + 1} gradient-border glass-hover shine flex flex-col p-8 rounded-2xl`}
+                      className={`reveal reveal-delay-${i + 1} gradient-border glass-hover shine flex flex-col rounded-2xl group`}
                       style={{ background: 'rgba(255,255,255,0.02)' }}
                     >
-                      <div className="flex items-center gap-3 mb-6">
-                        <div
-                          className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl overflow-hidden"
-                          style={{ background: `${p.accent}15`, border: `1px solid ${p.accent}25` }}
-                        >
-                          {p.icon.startsWith('/') ? (
-                            <img src={p.icon} alt={`${p.name} logo`} className="w-full h-full object-cover" />
-                          ) : (
-                            p.icon
-                          )}
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg leading-tight">{p.name}</h4>
-                          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                            {p.role}
+                      {/* Terminal/Window Header */}
+                      <div className="flex items-center gap-1.5 px-4 py-3 border-b" style={{ borderColor: 'var(--border)' }}>
+                        <div className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }} />
+                        <div className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }} />
+                        <div className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }} />
+                        <span className="ml-2 text-[10px] font-mono tracking-wider" style={{ color: 'var(--text-muted)' }}>
+                          {p.name.toLowerCase().replace(/\s+/g, '-')}.exe
+                        </span>
+                      </div>
+
+                      <div className="p-8 flex flex-col flex-1 relative overflow-hidden">
+                        {/* Subtle background glow on hover */}
+                        <div 
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                          style={{
+                            background: `radial-gradient(circle at center, ${p.accent}08 0%, transparent 70%)`
+                          }}
+                        />
+                        
+                        <div className="relative z-10 flex flex-col flex-1">
+                          <div className="flex items-center gap-4 mb-6">
+                            <div
+                              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105"
+                              style={{ background: `${p.accent}15`, border: `1px solid ${p.accent}30` }}
+                            >
+                              {p.icon.startsWith('/') ? (
+                                <img src={p.icon} alt={`${p.name} logo`} className="w-full h-full object-cover" />
+                              ) : (
+                                p.icon
+                              )}
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-lg leading-tight group-hover:text-white transition-colors">{p.name}</h4>
+                              <p className="text-xs uppercase tracking-widest mt-1" style={{ color: 'var(--text-muted)' }}>
+                                {p.role}
+                              </p>
+                            </div>
+                          </div>
+
+                          <p className="text-xs font-semibold mb-3" style={{ color: p.accent }}>
+                            {p.tagline}
                           </p>
+                          <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'var(--text-secondary)' }}>
+                            {p.description}
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 mb-8">
+                            {p.tech.map((t) => (
+                              <span key={t} className="tech-badge text-[10px]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <a
+                            href={p.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-semibold transition-colors mt-auto w-fit"
+                            style={{ color: 'var(--text-secondary)' }}
+                            onMouseEnter={(e) => (e.currentTarget.style.color = p.accent)}
+                            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                          >
+                            <span className="flex items-center justify-center w-6 h-6 rounded-full border border-current">
+                              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
+                              </svg>
+                            </span>
+                            View Source
+                          </a>
                         </div>
                       </div>
-
-                      <p className="text-xs font-medium italic mb-3" style={{ color: p.accent }}>
-                        {p.tagline}
-                      </p>
-                      <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: 'var(--text-secondary)' }}>
-                        {p.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 mb-6">
-                        {p.tech.map((t) => (
-                          <span key={t} className="tech-badge">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-
-                      <a
-                        href={p.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold transition-colors group"
-                        style={{ color: 'var(--text-secondary)' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = p.accent)}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
-                      >
-                        View on GitHub
-                        <svg
-                          className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </a>
                     </div>
                   ))}
               </div>
@@ -570,23 +589,43 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="mb-8">
-                      <h4 className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-                        Approach
+                    <div className="mb-10">
+                      <h4 className="text-sm font-bold uppercase tracking-widest mb-6" style={{ color: 'var(--text-muted)' }}>
+                        Execution Pipeline
                       </h4>
-                      <ol className="space-y-3">
+                      <div className="flex flex-col md:flex-row gap-4 relative">
+                        {/* Connecting line for desktop */}
+                        <div className="hidden md:block absolute top-6 left-0 right-0 h-px" style={{ background: 'var(--border)', zIndex: 0 }} />
+                        
                         {study.approach.map((step, stepIndex) => (
-                          <li key={step} className="flex gap-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                            <span
-                              className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                              style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--accent-bright)' }}
-                            >
-                              {stepIndex + 1}
-                            </span>
-                            {step}
-                          </li>
+                          <div key={step} className="flex-1 relative z-10 flex flex-row md:flex-col items-start gap-4 group">
+                            {/* Node */}
+                            <div className="relative">
+                              <div
+                                className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-sm font-black border transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                                style={{ 
+                                  background: 'var(--bg-main)', 
+                                  color: 'var(--accent-bright)',
+                                  borderColor: 'var(--border)'
+                                }}
+                              >
+                                {stepIndex + 1}
+                              </div>
+                              {/* Mobile connecting line */}
+                              {stepIndex !== study.approach.length - 1 && (
+                                <div className="md:hidden absolute top-12 bottom-[-16px] left-1/2 w-px -translate-x-1/2" style={{ background: 'var(--border)' }} />
+                              )}
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="flex-1 pt-1 md:pt-0">
+                              <p className="text-xs md:text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                {step}
+                              </p>
+                            </div>
+                          </div>
                         ))}
-                      </ol>
+                      </div>
                     </div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
