@@ -288,7 +288,7 @@ export default function Home() {
                     <div className="grid lg:grid-cols-5 min-h-[480px]">
                       <div className="lg:col-span-3 p-10 lg:p-16 flex flex-col justify-between">
                         <div>
-                          <div className="flex items-center gap-3 mb-8">
+                          <div className="flex flex-wrap items-center gap-3 mb-8">
                             <span
                               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider"
                               style={{
@@ -299,6 +299,14 @@ export default function Home() {
                             >
                               Flagship · Live
                             </span>
+                            {p.name === 'SHY' && (
+                              <img
+                                src="/nvidia-inception.png"
+                                alt="NVIDIA Inception Program Member"
+                                className="h-7 object-contain opacity-90"
+                                title="NVIDIA Inception Program Member"
+                              />
+                            )}
                             <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
                               {p.role}
                             </span>
@@ -363,46 +371,60 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div
-                        className="lg:col-span-2 relative flex items-center justify-center overflow-hidden"
-                        style={{ background: 'rgba(0,0,0,0.4)', minHeight: '300px' }}
+                      {/* Right panel: real app preview */}
+                      <a
+                        href={p.liveUrl ?? '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="lg:col-span-2 relative flex items-end justify-center overflow-hidden group"
+                        style={{ background: 'rgba(0,0,0,0.5)', minHeight: '300px' }}
+                        aria-label={`Visit ${p.name} live app`}
                       >
-                        <div className="absolute inset-0 grid-pattern opacity-30" />
+                        {/* Ambient glow */}
                         <div
                           className="absolute inset-0"
                           style={{
-                            background: 'radial-gradient(ellipse at center, rgba(59,130,246,0.2) 0%, transparent 70%)',
+                            background: 'radial-gradient(ellipse at 50% 80%, rgba(59,130,246,0.18) 0%, transparent 70%)',
                           }}
                         />
-                        <div className="relative flex flex-col items-center gap-6 z-10">
-                          <div className="flex items-center justify-center w-32 h-32 rounded-[2rem] overflow-hidden" style={{ filter: 'drop-shadow(0 0 40px rgba(59,130,246,0.5))' }}>
-                            {p.icon.startsWith('/') ? (
+                        {/* Phone mockup image */}
+                        {p.name === 'SHY' ? (
+                          <img
+                            src="/shy-preview.png"
+                            alt="SHY app live preview — click to visit shyapps.com"
+                            className="relative z-10 w-[72%] max-w-[280px] object-contain transition-transform duration-500 group-hover:scale-105"
+                            style={{ marginBottom: '-2px' }}
+                          />
+                        ) : (
+                          <div className="relative z-10 flex flex-col items-center gap-4 pb-10">
+                            <div className="flex items-center justify-center w-24 h-24 rounded-[1.5rem] overflow-hidden" style={{ filter: 'drop-shadow(0 0 30px rgba(59,130,246,0.4))' }}>
+                              {p.icon.startsWith('/') ? (
                                 <img src={p.icon} alt={`${p.name} logo`} className="w-full h-full object-cover" />
                               ) : (
-                                <span className="text-8xl">{p.icon}</span>
-                              )}
-                          </div>
-                          <div className="text-3xl font-black tracking-widest gradient-text">{p.name}</div>
-                          {p.liveUrl && (
-                            <div className="flex flex-col items-center gap-6 mt-2">
-                              <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                                Live on {new URL(p.liveUrl).hostname}
-                              </div>
-                              {p.name === 'SHY' && (
-                                <div className="mt-2" style={{ filter: 'drop-shadow(0 0 20px rgba(118, 185, 0, 0.2))' }}>
-                                  <img 
-                                    src="/nvidia-inception.png" 
-                                    alt="NVIDIA Inception Program Member" 
-                                    className="h-10 object-contain hover:scale-105 transition-transform cursor-help"
-                                    title="Backed by the NVIDIA Inception Program"
-                                  />
-                                </div>
+                                <span className="text-6xl">{p.icon}</span>
                               )}
                             </div>
-                          )}
+                            <div className="text-2xl font-black tracking-widest gradient-text">{p.name}</div>
+                          </div>
+                        )}
+                        {/* Click-to-visit overlay hint */}
+                        <div
+                          className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+                          style={{ background: 'rgba(59,130,246,0.9)', color: '#fff' }}
+                        >
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Visit Live
                         </div>
-                      </div>
+                        {/* Live dot bottom */}
+                        <div className="absolute bottom-4 left-0 right-0 flex justify-center z-20">
+                          <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+                            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                            {p.liveUrl ? new URL(p.liveUrl).hostname : ''}
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 ))}
