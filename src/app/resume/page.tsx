@@ -11,7 +11,15 @@ import './resume.css';
 export const metadata: Metadata = {
   title: 'Resume',
   description:
-    'Resume for Jonah Eastin — Software Engineer specializing in Flutter, TypeScript, Supabase, and production mobile/web applications.',
+    'Resume for Jonah Eastin — Software Engineer & Diagnostic Systems Specialist. Flutter, TypeScript, Rust, Supabase. 9+ years systems diagnostics, 40+ flood vehicle recoveries, 4 live software repos.',
+};
+
+const skillCategoryLabels: Record<string, string> = {
+  languages: 'Languages',
+  frameworks: 'Frameworks',
+  backend: 'Backend & Cloud',
+  diagnostics: 'OEM Diagnostics',
+  practices: 'Practices',
 };
 
 export default function ResumePage() {
@@ -27,12 +35,19 @@ export default function ResumePage() {
       </div>
 
       <article className="resume-sheet max-w-3xl mx-auto px-6 py-20 print:py-0 print:px-0">
+
+        {/* Header */}
         <header className="mb-8 border-b border-white/10 pb-6">
           <h1 className="text-4xl font-black tracking-tight mb-1">{siteConfig.name}</h1>
-          <p className="text-lg text-blue-400 font-medium mb-4">{siteConfig.title}</p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-400">
-            <span>{siteConfig.location}</span>
-            <span>{siteConfig.email}</span>
+          <p className="text-lg text-blue-400 font-medium mb-1">
+            Software Engineer &amp; Systems Diagnostics Specialist
+          </p>
+          <p className="text-sm text-slate-400 mb-4">
+            English · Tigrinya · Amharic &nbsp;|&nbsp; U.S. Citizen · Valid Driver's License
+          </p>
+          <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-400">
+            <span>(314) 901-4011</span>
+            <a href={`mailto:${siteConfig.email}`} className="hover:text-white">{siteConfig.email}</a>
             <a href={siteConfig.siteUrl} className="hover:text-white">
               {siteConfig.siteUrl.replace('https://', '')}
             </a>
@@ -40,21 +55,29 @@ export default function ResumePage() {
               github.com/shylovegarden
             </a>
             <a href={siteConfig.linkedInUrl} className="hover:text-white">
-              linkedin.com/in/jonaheastin
+              linkedin.com/in/jonah-eastin
             </a>
           </div>
         </header>
 
+        {/* Summary */}
         <section className="mb-8">
           <h2 className="resume-section-title">Summary</h2>
           <p className="text-sm leading-relaxed text-slate-300">
-            Software engineer with 10+ years diagnosing complex technical systems and 4 shipped production applications.
-            Specializes in Flutter mobile development, TypeScript/Next.js web apps, Supabase backends, and AI-integrated
-            workflows (Vertex AI, Google Cloud). Ships end-to-end — from architecture and implementation to deployment.
-            Based in the US; open to remote, hybrid, and nationwide roles.
+            Diagnostic and electronics repair specialist with 9+ years of hands-on technical experience,
+            including 6+ years restoring electrically dead and flood-damaged vehicles for shops across
+            Missouri, Texas, Arizona, and Indiana — approximately 40 full flood-vehicle recoveries,
+            each requiring 10 or more control modules replaced, programmed, and returned to service.
+            Works at the circuit-board level (UART/BDM bench programming, EEPROM recovery, chip-level
+            processor transplants) in addition to factory-authorized OEM scan-tool diagnostics across
+            GM, Stellantis, BMW, Mercedes-Benz, and Audi. Self-taught software developer with 4 live,
+            publicly verifiable applications on GitHub — built on Flutter/Dart, TypeScript/Next.js,
+            Rust, and Supabase. NVIDIA Inception Program member.
+            Open to remote, hybrid, and nationwide roles.
           </p>
         </section>
 
+        {/* Experience */}
         <section className="mb-8">
           <h2 className="resume-section-title">Experience</h2>
           <div className="space-y-6">
@@ -77,40 +100,62 @@ export default function ResumePage() {
           </div>
         </section>
 
+        {/* Selected Projects */}
         <section className="mb-8">
           <h2 className="resume-section-title">Selected Projects</h2>
           <div className="space-y-4 text-sm text-slate-300">
             <div>
-              <p className="font-bold text-slate-100">SHY — Live production mobile app</p>
-              <p>
-                Flutter · Supabase · Vertex AI · Google Cloud ·{' '}
-                <a href="https://shyapps.com" className="text-blue-400">
-                  shyapps.com
-                </a>
+              <p className="font-bold text-slate-100">
+                SHY — Relationship OS (LifeOS) · Live Production &nbsp;
+                <span className="text-xs font-normal text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">NVIDIA Inception Member</span>
+              </p>
+              <p className="mt-0.5 text-slate-400">
+                Flutter (BLoC/Provider) · Supabase (Postgres RLS + 300+ Edge Functions) · Vertex AI · Stripe ·{' '}
+                <a href="https://shyapps.com" className="text-blue-400 hover:text-blue-300">shyapps.com</a>
               </p>
             </div>
             <div>
-              <p className="font-bold text-slate-100">DealerHunt PRO — Dealer intelligence platform</p>
-              <p>TypeScript · Next.js · Supabase · REST APIs</p>
+              <p className="font-bold text-slate-100">DealerHunt-PRO — Multi-source vehicle sourcing intelligence platform · 900+ commits</p>
+              <p className="mt-0.5 text-slate-400">Next.js 15 · TypeScript · Playwright/patchright scrapers (GitHub Actions) · Supabase Realtime · Gemini AI</p>
             </div>
             <div>
-              <p className="font-bold text-slate-100">Zeus — Rust systems project</p>
-              <p>Performance engineering · diagnostic-first architecture</p>
+              <p className="font-bold text-slate-100">Zeus — Custom systems language compiler (Rust)</p>
+              <p className="mt-0.5 text-slate-400">.zs → C + native binaries · Zero-heap enforcement · Z3-backed compile-time assertion proving · Axum/Tokio cloud service</p>
+            </div>
+            <div>
+              <p className="font-bold text-slate-100">Stay Life — Minimalist productivity web app</p>
+              <p className="mt-0.5 text-slate-400">HTML · CSS · JavaScript · Supabase</p>
             </div>
           </div>
         </section>
 
-        <section>
+        {/* Skills */}
+        <section className="mb-8">
           <h2 className="resume-section-title">Skills</h2>
           <dl className="space-y-3 text-sm">
             {Object.entries(resumeSkills).map(([category, items]) => (
-              <div key={category} className="grid grid-cols-[120px_1fr] gap-2">
-                <dt className="font-semibold text-slate-400 capitalize">{category}</dt>
-                <dd className="text-slate-300">{items.join(' · ')}</dd>
+              <div key={category} className="grid grid-cols-[140px_1fr] gap-2">
+                <dt className="font-semibold text-slate-400">
+                  {skillCategoryLabels[category] ?? category}
+                </dt>
+                <dd className="text-slate-300">{(items as string[]).join(' · ')}</dd>
               </div>
             ))}
           </dl>
         </section>
+
+        {/* Education */}
+        <section>
+          <h2 className="resume-section-title">Education</h2>
+          <div className="text-sm text-slate-300 space-y-1">
+            <p>
+              <span className="font-semibold text-slate-100">Networking / Information Technology coursework</span>
+              {' '}— St. Louis Community College (STLCC); coursework transferred to Fontbonne University, 2018
+            </p>
+            <p className="text-slate-400">Planning to enroll in an online bachelor's degree program in late 2026.</p>
+          </div>
+        </section>
+
       </article>
     </div>
   );

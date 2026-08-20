@@ -30,15 +30,15 @@ export const siteConfig = {
   email: 'jonah@shyapps.com',
   siteUrl: 'https://jonaheastin.com',
   githubUrl: 'https://github.com/shylovegarden',
-  linkedInUrl: 'https://linkedin.com/in/jonaheastin',
+  linkedInUrl: 'https://www.linkedin.com/in/jonah-eastin-7b0731426/',
   location: 'Remote',
 };
 
 export const stats = [
-  { value: '10+', label: 'Years Diagnosing Complex Systems' },
-  { value: '4', label: 'Production Applications Shipped' },
-  { value: '1', label: 'Live Product (shyapps.com)' },
-  { value: 'Full-Stack', label: 'Mobile · Web · Cloud · AI' },
+  { value: '9+', label: 'Years in Complex Systems Diagnostics' },
+  { value: '40+', label: 'Flood Vehicle Recoveries (10+ modules each)' },
+  { value: '4', label: 'Live Software Repos on GitHub' },
+  { value: '5', label: 'OEM Factory Software Platforms' },
 ];
 
 export const expertise = [
@@ -221,41 +221,64 @@ export const caseStudies: CaseStudy[] = [
 export const resumeExperience = [
   {
     title: 'Founder & Lead Architect',
-    company: 'SHY',
+    company: 'SHY (shyapps.com)',
     period: '2024 – Present',
     location: 'Remote',
     bullets: [
-      'Architected and shipped a production Flutter mobile app with Supabase backend and Vertex AI integration.',
+      'Architected and shipped a production Flutter/Dart mobile app with Supabase backend, Vertex AI integration, Stripe monetization, and 300+ Edge Functions. Live at shyapps.com.',
       'Own full product lifecycle: system design, mobile development, cloud deployment, and iteration based on user feedback.',
-      'Live product at shyapps.com — mobile (iOS/Android), backend services, and AI-assisted features (NVIDIA Inception Program Member).',
+      'Backed by the NVIDIA Inception Program; cross-platform on iOS, Android, and Web.',
     ],
   },
   {
-    title: 'Independent Software Engineer',
+    title: 'Independent Software Developer',
     company: 'Self-Directed Projects',
     period: '2023 – Present',
     location: 'Remote',
     bullets: [
-      'Built DealerHunt PRO — TypeScript/Next.js dealer intelligence platform with Supabase and REST API integrations.',
-      'Built Stay Life — minimalist productivity web app with Supabase backend.',
-      'Built Zeus — Rust systems project focused on performance and diagnostic engineering.',
+      'Built DealerHunt-PRO — vehicle auction and marketplace sourcing platform using Next.js 15, TypeScript, Playwright/patchright scrapers on GitHub Actions, Supabase Realtime, and Gemini AI for automated valuation. 900+ commits.',
+      'Built Zeus — prototype Rust compiler for a custom systems language (.zs → C + native binaries); enforces zero-heap memory, Z3-backed compile-time assertion proving, and side-channel hardening for secret variables.',
+      'Built Stay Life — minimalist productivity web app with Supabase backend; clean UI/UX focused on distraction-free workflows.',
     ],
   },
   {
-    title: 'Technical Diagnostics Specialist',
-    company: 'Prior Career (10+ years)',
-    period: 'Pre-2023',
-    location: 'Remote',
+    title: 'Lead Diagnostic & Module Repair Technician',
+    company: 'North Park Auto Center',
+    period: 'Oct 2016 – Present',
+    location: 'St. Louis, MO',
     bullets: [
-      'Diagnosed complex technical systems under time pressure — root-cause analysis, systematic troubleshooting, and clear documentation.',
-      'Developed transferable skills in reliability thinking, failure isolation, and precision problem-solving.',
+      'Diagnose and restore severely flood-damaged, submerged, and fully unresponsive vehicle electrical systems across GM, Stellantis, BMW, Mercedes-Benz, and Audi platforms — approximately 40 full flood-vehicle recoveries, each involving 10 or more modules replaced, programmed, and returned to service.',
+      'Repair control modules at the circuit-board level using UART and BDM bench tools, including chip-level processor transplants and EEPROM read/write recovery on modules other shops write off as unrepairable.',
+      'Maintain paid factory-level OEM subscription accounts (GDS2/SPS2/Techline Connect, wiTECH 2.0, ISTA, XENTRY, ODIS); all programming performed with manufacturer-authorized software rather than aftermarket workarounds.',
+      'Program keys and immobilizer systems using the full Autel Pro suite (IM608); trained independent locksmiths and shops across Missouri and Texas.',
+    ],
+  },
+  {
+    title: 'Diagnostic & Module Programming Contractor',
+    company: 'Independent Contract Work',
+    period: '2019 – Present',
+    location: 'MO, TX, AZ, IN',
+    bullets: [
+      'Contracted by repair facilities and body shops in four states to resolve network communication failures, gateway lockouts, and module programming problems beyond the scope of on-site technicians.',
+      'Perform on-site and bench-level module recovery, programming, and network restoration on vehicles other shops could not fix.',
+    ],
+  },
+  {
+    title: 'Technical Support Technician',
+    company: 'Charter Communications (Spectrum)',
+    period: 'Feb 2016 – Sep 2016',
+    location: 'St. Louis, MO',
+    bullets: [
+      'Installed and serviced cable, internet, and network equipment in residential environments.',
+      'Diagnosed and resolved connectivity and hardware faults independently in the field.',
     ],
   },
 ];
 
 export const resumeSkills = {
   languages: ['Dart', 'TypeScript', 'JavaScript', 'Rust', 'SQL', 'HTML/CSS'],
-  frameworks: ['Flutter', 'Next.js', 'React', 'Tailwind CSS'],
-  backend: ['Supabase', 'PostgreSQL', 'REST APIs', 'Google Cloud', 'Vertex AI'],
-  practices: ['System design', 'Root-cause debugging', 'CI/CD', 'AI-augmented development', 'Mobile & web deployment'],
+  frameworks: ['Flutter', 'Next.js 15', 'React', 'Tailwind CSS', 'Axum/Tokio'],
+  backend: ['Supabase (Postgres + RLS + Edge)', 'REST APIs', 'Playwright', 'Google Cloud', 'Vertex AI', 'Stripe'],
+  diagnostics: ['GDS2/SPS2 (GM)', 'wiTECH 2.0 (Stellantis)', 'ISTA (BMW)', 'XENTRY (Mercedes-Benz)', 'ODIS (Audi)', 'Autel IM608'],
+  practices: ['Circuit-board repair', 'EEPROM recovery', 'UART/BDM bench programming', 'CAN/LIN bus diagnostics', 'Z3 SMT proving', 'CI/CD', 'AI-augmented development'],
 };
