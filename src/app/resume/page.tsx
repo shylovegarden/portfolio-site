@@ -51,7 +51,7 @@ export default function ResumePage() {
             Software engineer with 10+ years diagnosing complex technical systems and 4 shipped production applications.
             Specializes in Flutter mobile development, TypeScript/Next.js web apps, Supabase backends, and AI-integrated
             workflows (Vertex AI, Google Cloud). Ships end-to-end — from architecture and implementation to deployment.
-            Based in St. Peters, MO; open to remote, hybrid, and St. Louis metro roles.
+            Based in the US; open to remote, hybrid, and nationwide roles.
           </p>
         </section>
 

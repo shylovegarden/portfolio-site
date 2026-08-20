@@ -31,7 +31,7 @@ export const siteConfig = {
   siteUrl: 'https://jonaheastin.com',
   githubUrl: 'https://github.com/shylovegarden',
   linkedInUrl: 'https://linkedin.com/in/jonaheastin',
-  location: 'St. Peters, MO',
+  location: 'Remote',
 };
 
 export const stats = [
@@ -199,7 +199,7 @@ export const resumeExperience = [
     title: 'Founder & Lead Architect',
     company: 'SHY',
     period: '2024 – Present',
-    location: 'St. Peters, MO',
+    location: 'Remote',
     bullets: [
       'Architected and shipped a production Flutter mobile app with Supabase backend and Vertex AI integration.',
       'Own full product lifecycle: system design, mobile development, cloud deployment, and iteration based on user feedback.',
@@ -210,7 +210,7 @@ export const resumeExperience = [
     title: 'Independent Software Engineer',
     company: 'Self-Directed Projects',
     period: '2023 – Present',
-    location: 'St. Peters, MO',
+    location: 'Remote',
     bullets: [
       'Built DealerHunt PRO — TypeScript/Next.js dealer intelligence platform with Supabase and REST API integrations.',
       'Built Life — minimalist productivity web app with Supabase backend.',
@@ -221,7 +221,7 @@ export const resumeExperience = [
     title: 'Technical Diagnostics Specialist',
     company: 'Prior Career (10+ years)',
     period: 'Pre-2023',
-    location: 'St. Louis Metro',
+    location: 'Remote',
     bullets: [
       'Diagnosed complex technical systems under time pressure — root-cause analysis, systematic troubleshooting, and clear documentation.',
       'Developed transferable skills in reliability thinking, failure isolation, and precision problem-solving.',

@@ -23,15 +23,14 @@ export const metadata: Metadata = {
     template: "%s | Jonah Eastin",
   },
   description:
-    "Software engineer in St. Peters, MO. I build and deploy production mobile and web apps with Flutter, TypeScript, Supabase, and Vertex AI. Open to full-time, contract, and hybrid roles.",
+    "Software engineer, remote. I build and deploy production mobile and web apps with Flutter, TypeScript, Supabase, and Vertex AI. Open to full-time, contract, and hybrid roles.",
   keywords: [
-    "Software Engineer St. Louis",
-    "Flutter Developer Missouri",
-    "Full Stack Developer St. Peters",
-    "TypeScript Developer St. Louis",
-    "Supabase Developer",
-    "Mobile App Developer St. Louis",
-    "Contract Software Engineer St. Charles",
+    "Software Engineer Remote",
+    "Flutter Developer Remote",
+    "Full Stack Developer Remote",
+    "TypeScript Developer Remote",
+    "Mobile App Developer Remote",
+    "Contract Software Engineer Remote",
   ],
   alternates: {
     canonical: "/",
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jonah Eastin | Software Engineer · Full-Stack & Mobile",
     description:
-      "Production mobile and web applications — Flutter, TypeScript, Supabase, Vertex AI. Based in St. Peters, MO.",
+      "Production mobile and web applications — Flutter, TypeScript, Supabase, Vertex AI. Remote.",
     type: "website",
     url: siteUrl,
     siteName: "Jonah Eastin",

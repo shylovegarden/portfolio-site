@@ -90,7 +90,7 @@ export default function Home() {
                 className="status-pulse inline-flex items-center px-4 py-2 rounded-full text-sm font-medium glass border"
                 style={{ borderColor: 'rgba(74,222,128,0.2)', color: '#86efac' }}
               >
-                Available for Full-Time & Contract — Greater St. Louis Metro
+                Available for Full-Time & Contract — Remote
               </span>
             </div>
 
@@ -549,20 +549,17 @@ export default function Home() {
                   Availability
                 </div>
                 <h2 id="coverage-heading" className="text-4xl md:text-5xl font-black tracking-tight mb-6">
-                  St. Louis Metro · Remote OK
+                  Available Nationwide · Remote OK
                 </h2>
                 <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
-                  Open to remote roles nationwide, hybrid arrangements, and on-site work across the Greater St. Louis
-                  area.
+                  Fully equipped for distributed work. Open to remote roles nationwide and flexible hybrid arrangements.
                 </p>
                 <div className="flex flex-col gap-3">
                   {[
-                    'St. Peters, MO (Home Base)',
-                    'St. Charles, MO',
-                    "O'Fallon, MO",
-                    'Arnold, MO',
-                    'Festus, MO',
-                    'Greater St. Louis Metro',
+                    'Remote Nationwide',
+                    'US Timezones (EST/CST/PST)',
+                    'Asynchronous Workflows',
+                    'Available for Travel',
                   ].map((city, cityIndex) => (
                     <div key={city} className={`reveal reveal-delay-${Math.min(cityIndex + 1, 4)} flex items-center gap-3`}>
                       <div
@@ -592,10 +589,10 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-5xl mb-2">📍</div>
-                          <div className="font-bold text-sm">St. Peters, MO</div>
+                          <div className="text-5xl mb-2">🌎</div>
+                          <div className="font-bold text-sm">Remote, US</div>
                           <div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
-                            Full St. Louis Metro Area
+                            Available Worldwide
                           </div>
                         </div>
                       </div>
@@ -676,7 +673,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-                Software Engineer · Full-Stack & Mobile · St. Louis Metro
+                Software Engineer · Full-Stack & Mobile · Remote
               </div>
             </div>
           </div>
