@@ -71,7 +71,7 @@ export const projects: Project[] = [
     liveUrl: 'https://shyapps.com',
     liveLabel: 'Visit shyapps.com',
     githubUrl: 'https://github.com/shylovegarden',
-    icon: '/shy-logo.png', // Using image path instead of emoji
+    icon: '/shy-logo.webp',
     accent: '#3b82f6',
   },
   {

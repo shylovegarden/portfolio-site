@@ -392,7 +392,7 @@ export default function Home() {
                         {/* Phone mockup image */}
                         {p.name === 'SHY' ? (
                           <img
-                            src="/shy-preview.png"
+                            src="/shy-preview.webp"
                             alt="SHY app live preview — click to visit shyapps.com"
                             className="relative z-10 w-[72%] max-w-[280px] object-contain transition-transform duration-500 group-hover:scale-105"
                             style={{ marginBottom: '-2px', animation: 'float-subtle 6s ease-in-out infinite' }}

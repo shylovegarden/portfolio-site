@@ -9,9 +9,25 @@ import { PrintButton } from './PrintButton';
 import './resume.css';
 
 export const metadata: Metadata = {
-  title: 'Resume',
+  title: 'Resume — Jonah Eastin | Software Engineer',
   description:
-    'Resume for Jonah Eastin — Software Engineer & Diagnostic Systems Specialist. Flutter, TypeScript, Rust, Supabase. 9+ years systems diagnostics, 40+ flood vehicle recoveries, 4 live software repos.',
+    'Full resume for Jonah Eastin — Software Engineer & Diagnostic Systems Specialist. Flutter, TypeScript, Rust, Supabase, Vertex AI. 9+ years systems diagnostics. NVIDIA Inception. Available for full-time & contract roles.',
+  alternates: {
+    canonical: '/resume',
+  },
+  openGraph: {
+    title: 'Resume — Jonah Eastin | Software Engineer',
+    description:
+      'Flutter · TypeScript · Rust · Supabase · Vertex AI. 9+ years systems diagnostics. NVIDIA Inception. Available full-time & contract, remote.',
+    url: 'https://jonaheastin.com/resume',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Resume — Jonah Eastin | Software Engineer',
+    description:
+      'Flutter · TypeScript · Rust · Supabase. NVIDIA Inception. Available for full-time & contract.',
+  },
 };
 
 const skillCategoryLabels: Record<string, string> = {
