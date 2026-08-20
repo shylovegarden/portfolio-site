@@ -196,7 +196,7 @@ export const caseStudies: CaseStudy[] = [
     project: 'Zeus',
     role: 'Systems Engineer',
     problem:
-      'Architected a high-performance systems platform exploring kernel bypass, hardware enclaves, and bare-metal execution.',
+      'Performance and reliability bottlenecks frequently sit below the application layer, requiring bare-metal execution, hardware enclaves, and kernel bypass for maximum throughput and security.',
     approach: [
       'Implemented core execution logic in Rust for strict memory safety and predictable latency.',
       'Built an accompanying cloud service using Axum and Tokio for remote job orchestration.',

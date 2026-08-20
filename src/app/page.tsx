@@ -336,10 +336,12 @@ export default function Home() {
                               )}
                           </div>
                           <div className="text-3xl font-black tracking-widest gradient-text">{p.name}</div>
-                          <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-                            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                            Live on shyapps.com
-                          </div>
+                          {p.liveUrl && (
+                            <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+                              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                              Live on {new URL(p.liveUrl).hostname}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
